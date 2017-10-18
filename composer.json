@@ -1,0 +1,19 @@
+{
+  "name": "sercul/trip-plan",
+  "description": "Trip Plan",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Serghei Culesov",
+      "email": "sercul@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Trip\\": "app/"
+    }
+  }
+}

@@ -151,4 +151,61 @@ class BoardingPass
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function processTrain()
+    {
+        return "Take train " . $this->getNumber() . " from " . $this->getDeparture() . " to " . $this->getArrival() . ". " . $this->processSeat() . "\n";
+    }
+
+    /**
+     * @return string
+     */
+    public function processBus()
+    {
+        return "Take the airport bus from " . $this->getDeparture() . " to " . $this->getArrival() . ". " . $this->processSeat() . "\n";
+    }
+
+    /**
+     * @return string
+     */
+    public function processPlane()
+    {
+        return "From " . $this->getDeparture() . ", take flight " . $this->getNumber() . " to " . $this->getArrival() . ". " . $this->processGate() . $this->processSeat() . $this->processCounter() . ".\n";
+    }
+
+    /**
+     * @return string
+     */
+    public function processDefault()
+    {
+        return "From " . $this->getDeparture() . " to " . $this->getArrival() . " ";
+    }
+
+    /**
+     * @return string
+     */
+    private function processCounter()
+    {
+        return $this->getBaggageCounter() ?
+            " Baggage drop at ticket counter " . $this->getBaggageCounter() :
+            " Baggage will we automatically transferred from your last leg";
+    }
+
+    /**
+     * @return string
+     */
+    private function processGate()
+    {
+        return !$this->getGate() ?: "Gate " . $this->getGate(). ", ";
+    }
+
+    /**
+     * @return string
+     */
+    private function processSeat()
+    {
+        return $this->getSeat() ? " Sit in seat " . $this->getSeat() . "." : "No seat assignment.";
+    }
 }
