@@ -82,11 +82,11 @@ class TripManagerTest extends TestCase
 
         $this->assertEquals(
             'Take train 78A from Madrid to Barcelona.  Sit in seat 45B.
-            Take the airport bus from Barcelona to Gerona Airport. No seat assignment.
-            From Gerona Airport, take flight SK455 to Stockholm. Gate 45B,  Sit in seat 3A. Baggage drop at ticket counter 334.
-            From Stockholm, take flight SK22 to New York. Gate 22,  Sit in seat 7B. Baggage will we automatically transferred from your last leg.
-            You have arrived at your final destination.
-            ', $this->manager->getTrip()
+Take the airport bus from Barcelona to Gerona Airport. No seat assignment.
+From Gerona Airport, take flight SK455 to Stockholm. Gate 45B,  Sit in seat 3A. Baggage drop at ticket counter 334.
+From Stockholm, take flight SK22 to New York. Gate 22,  Sit in seat 7B. Baggage will we automatically transferred from your last leg.
+You have arrived at your final destination.
+', $this->manager->getTrip()
         );
     }
 }
