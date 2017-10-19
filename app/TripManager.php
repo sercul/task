@@ -27,6 +27,14 @@ class TripManager
     }
 
     /**
+     * @return BoardingPass[]
+     */
+    public function getPasses(): array
+    {
+        return $this->passes;
+    }
+
+    /**
      * Fill the pass models
      *
      * @param array $passes
@@ -65,7 +73,7 @@ class TripManager
      *
      * @return null
      */
-    private function sortPasses($amount, $exitIndex = 0)
+    public function sortPasses($amount, $exitIndex = 0)
     {
         if ($exitIndex == $amount - 1) {
             return null;
